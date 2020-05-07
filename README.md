@@ -1,6 +1,4 @@
 # DWWM_2005
 
-Ceci est le dépôt DWWM et CDA 2005 !
-
-Licorne FTW !
-YES !
+Dépôt DWWM et CDA 2005.
+Les codes démos et corrections y seront centralisés.
