@@ -10,4 +10,8 @@ const rl = readline.createInterface(params);
 
 rl.question('Question ????', answer => {
     console.log('Vous avez répondu ' + answer);
+<<<<<<< Updated upstream
+=======
+    rl.close();
+>>>>>>> Stashed changes
 });
