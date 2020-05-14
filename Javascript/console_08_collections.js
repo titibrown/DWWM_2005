@@ -20,7 +20,7 @@
 var collection = ['a1', 'a2', 'a3']; // déclaraion litérale
 var collection2 = Array('a1', 'a2', 'a3'); // déclaration procédurale
 var collection3 = new Array('a1', 'a2', 'a3'); // déclaration objet
-var collection4 = new Array(3); // déclarer un tableau de longueur 5 (chaque élément est vide)
+var collection4 = new Array(3); // déclarer un tableau de longueur 3 (chaque élément est vide)
 
 console.log('Collection #1', collection);
 console.log('Collection #2', collection2);

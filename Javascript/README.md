@@ -7,7 +7,7 @@
 ## Consignes
 Suivez les scripts dans l'ordre défini.
 Chaque script contient des commentaires explicatifs et des consignes pour s'exercer.
-Durant votre apprentissage, réalisez les exercies du PDF:
+Durant votre apprentissage, réalisez les exercices du PDF:
 https://arfp.eu/ressources/Algo/Algo%2005%20-%20Algorithme%20Exercices%20-%201.0.1%20MD.pdf 
 
 ## Exécution des scripts
