@@ -41,7 +41,7 @@ console.log(variable4);
 
 
 /**
- * Types de variables principaux: booléen, int, long, float, double, string, Array, Object 
+ * Types de variables principaux: booléen, int, long, float, double, string, Array, Object, function
  * Il exsite 2 grandes familles de variables :
  * - Les variables type "valeur", généralement les types "simples" (nombres, chaines de caractère et structures)
  * - Les variables type "référence" (les objets et tous les types complexes)

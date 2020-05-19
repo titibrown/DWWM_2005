@@ -6,7 +6,7 @@
 
 var position = 0; // un entier
 
-// Condition: Tant que la valeur de la variable "position" est inférieure à 10, on exécute le bloc de code suivant l'instruction while
+// Tant que la valeur de la variable "position" est inférieure à 10, on exécute le bloc de code suivant l'instruction while
 // Dans ce bloc, on incrémente la variable "position".
 // Une fois le bloc exécuté, la condition dans le "while" est réévaluée. 
 // Tant que la condition renvoie vrai, on exécute le bloc à nouveau.
