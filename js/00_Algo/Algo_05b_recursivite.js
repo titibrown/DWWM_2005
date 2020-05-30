@@ -14,9 +14,9 @@ function produit_recursif(a, b) {
     return (produit_recursif(a-1, b) + b); 
 }
 
-console.log(a(0,30));
-console.log(a(30,0));
-console.log(a(2,3));
-console.log(a(3,2));
-console.log(a(4,9));
-console.log(a(9,4));
+console.log(produit_recursif(0,30));
+console.log(produit_recursif(30,0));
+console.log(produit_recursif(2,3));
+console.log(produit_recursif(3,2));
+console.log(produit_recursif(4,9));
+console.log(produit_recursif(9,4));
