@@ -71,7 +71,7 @@ class Area
      * @returns Boolean true en cas de succès, false si l'ajout est impossible 
      */
     addPoint(_point) {
-        if ((typeof _point) !== 'Point') {
+        if (!(_point instanceof Point)) {
             return false;
         }
 
