@@ -27,7 +27,7 @@
  * Créer un nouveau projet.
  * Dans ce projet, créer un répertoire "models". Les classes suivantes sont à placer dans ce répertoire.
  * Réécrire la classe Point en respectant le principe d'encapsulation (attributs privés + accesseurs/mutateurs)
- * En utilisant l'héritage, implémenter les classes "Wall", "Door", "Path" et "Goal" décrite ci-dessous.
+ * En utilisant l'héritage, implémenter les classes "Wall", "Door", "Path" et "Goal" décrite ci-dessus.
  * Toutes ces classes héritent de Point (directement ou indirectement).
  */
 
