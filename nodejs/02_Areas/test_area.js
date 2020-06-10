@@ -52,5 +52,8 @@ let p2 = p1.duplicate();
 a1.addPoint(p1);
 a2.addPoint(p2);
 
+// let triDistance = a1.points.sort(a1.closestFromOrigin);
+
+a1.needAllInside();
 
 console.log();
