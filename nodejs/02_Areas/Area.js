@@ -141,7 +141,7 @@ class Area
      * @returns int le nombre de points déplacés
      */
     needAllInside(/* déterminer les paramètres */) {
-        
+
         let nb = 0;
 
         for(let p of this.points) {

@@ -65,6 +65,7 @@ class Employee
      * @param Object _employee un objet quelconque // ex: { lastname: "Joe", ....}
      */
     constructor(_employee) {
+        
         // si l'argument _employee n'est pas fourni, _employee = un objet litéral vide (pour éviter les erreurs de référence)
         _employee = _employee || {};
 
@@ -82,7 +83,7 @@ class Employee
         // Notez la présence du # devant le nom des attributs après le . du this
         return this.#email;
     }
-    
+
     /**
      * Redéfinit l'email de l'employé
      * MUTATEUR pour l'attribut #email
