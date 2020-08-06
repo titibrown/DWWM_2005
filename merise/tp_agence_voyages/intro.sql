@@ -1,6 +1,6 @@
 
--- DDL : Langage de définition des données
--- CREATE créer une structure de données
+-- DDL : Langage de définition des données 
+-- CREATE créer une structure de données 
 -- ALTER  modifier une structure de données
 -- DROP   supprimer une structure de données
 
