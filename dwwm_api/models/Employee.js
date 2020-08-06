@@ -6,6 +6,7 @@ class Employee
     /** @var string firstname */
     #firstname;
 
+    
     constructor(_lastname, _firstname) {
        this.#lastname = _lastname;
        this.#firstname = _firstname;
@@ -26,6 +27,14 @@ class Employee
     getInfo()
     {
         return "Employee : " + this.#firstname + " " + this.#lastname;
+    }
+
+    toJson()
+    {
+        return JSON.stringify({
+            lastname: this.#lastname,
+            firstname: this.#firstname
+        });
     }
 }
 
