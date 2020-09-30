@@ -6,8 +6,8 @@ use tp_agence_voyages;
 
 CREATE TABLE IF NOT EXISTS countries (
     country_code CHAR(2) PRIMARY KEY,
-    country_name VARCHAR(128) NOT NULL
-)engine=InnoDb CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    country_name VARCHAR(128) NOT NULL 
+)engine=InnoDb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 CREATE TABLE IF NOT EXISTS cities (
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS themes (
     theme_code INT PRIMARY KEY AUTO_INCREMENT,
     theme_name VARCHAR(32),
     theme_description TEXT
-)  ENGINE=INNODB CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+) ENGINE=InnoDb CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 CREATE TABLE IF NOT EXISTS services (
