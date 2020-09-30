@@ -98,6 +98,15 @@ CREATE TABLE IF NOT EXISTS notes (
 )engine=InnoDb CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
+CREATE TABLE consumes
+(
+	service_code INT,
+    client_id INT,
+    PRIMARY KEY (service_code, client_id),
+    FOREIGN KEY (service_code) REFERENCES services(service_code),
+    FOREIGN KEY (client_id) REFERENCES clients(client_id)
+)engine=InnoDb CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 
 
 ALTER TABLE cities 

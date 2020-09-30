@@ -97,3 +97,9 @@ VALUES
 (3, 1, 5, 0),
 (4, 2, 2, 0);
 
+
+INSERT INTO consumes
+(service_code, client_id)
+VALUES
+(1, 1);
+
