@@ -74,7 +74,7 @@ INSERT INTO trips
 VALUES 
 ('Ski à Mulhouse', 101, '2021-01-02', '2021-01-07', 999.99, 'Les pistes de Mulhouse vous attendent', NULL, 1),
 ('Gastronomie Belge', 23, '2021-04-16', '2021-04-18', 345.50, 'Au coeur de la zone où il fait bon de manger', NULL, 2),
-('Culture à Milan', 17, '2021-04-17', '2021-01-23', 1300, 'Au coeur de Navigli, redécouvrez les beaux-arts', NULL, 3);
+('Culture à Milan', 17, '2021-04-17', '2021-04-23', 1300, 'Au coeur de Navigli, redécouvrez les beaux-arts', NULL, 3);
 
 
 INSERT INTO suggests 

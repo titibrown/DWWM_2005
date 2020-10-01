@@ -8,11 +8,13 @@ DROP PROCEDURE IF EXISTS add_note;
 
 DELIMITER $$
 
-CREATE PROCEDURE add_note(
-IN trip_code_in INT, 
-IN service_code_in INT,
-IN client_id_in INT,
-IN service_score_in TINYINT)
+CREATE PROCEDURE add_note
+(
+	IN trip_code_in INT, 
+	IN service_code_in INT,
+	IN client_id_in INT,
+	IN service_score_in TINYINT
+)
 BEGIN 
 
 	DECLARE service_count INT;
@@ -46,3 +48,5 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
