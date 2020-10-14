@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 800px;
+   
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: 1px solid #00C;
+}
+
+.container > article {
+    border: 1px solid #111;
+    flex-basis: 200px;
+    margin-bottom: 1em;
+}
