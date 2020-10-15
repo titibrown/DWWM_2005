@@ -14,7 +14,7 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: stretch;
     width: 800px;
    
@@ -29,4 +29,41 @@ img {
     border: 1px solid #111;
     flex-basis: 200px;
     margin-bottom: 1em;
+}
+
+/**
+breakpoints : 
+320px
+640px
+-- 768px 
+-- 1024px
+-- 1280px
+-- 1600px
+1920px
+**/
+@media screen and (max-width: 640px) {
+    .container > article {
+        flex-basis: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .container > article img {
+        width: 100%;
+        transition: all ease 800ms;
+    }
+
+    .container > article:hover img {
+        transform: scale(1.2);
+    }
+
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        margin: 0%;
+        width: 100%;
+        background-color: #FFFFFF44;
+    }
 }
