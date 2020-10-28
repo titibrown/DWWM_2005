@@ -8,7 +8,7 @@
 <body>
     <h1>Utilisateurs</h1>
 
-    <?php
+    <?php 
 
     require 'Models/DbConnect.php';
     require 'Models/User.php';

@@ -36,6 +36,26 @@ class Users
      */
     public function find(int $id)
     {
-        return false;
+        $statement = $this->pdo->prepare("SELECT * FROM users WHERE user_id=:id");
+
+        $values = [
+            ':id' => $id
+        ];
+
+        if($statement->execute($values)) {
+            $user = $statement->fetch(PDO::FETCH_ASSOC);
+        }
+        else {
+            $user = false;
+        }
+
+        $statement->closeCursor(); 
+
+        return $user;
     }
+
+    /*public function findBy($col, $val)
+    {
+        return false;
+    }*/
 }

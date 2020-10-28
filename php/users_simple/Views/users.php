@@ -1,21 +1,6 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Users</title>
-</head>
-<body>
-    <h1>Utilisateurs</h1>
+<h2>Users</h2>
 
-    <?php 
-    /**
-     * CONSIGNES : 
-     * 
-     * Adaptez le code et utilisez les classes du dossier Models.
-     * Utilisez l'exemple dans user_v2.php pour vous aider.
-     * 
-     */
-
-    require 'bootstrap.php';
+<?php
 
     $users_table = new Users();
 
@@ -47,7 +32,4 @@
         }
     }
 
-    ?>
-
-</body>
-</html>
+?>

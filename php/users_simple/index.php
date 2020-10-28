@@ -1,31 +1,60 @@
+<?php
+    require 'bootstrap.php';
+?>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Users</title>
-    </head>
-    <body>
-        <h1>Utilisateur</h1>
+<head>
+    <meta charset="utf-8">
+    <title>Mon site</title>
+</head>
 
+<body>
+    <header>
+        <h1>Welcome</h1>
+    </header>
+
+    <main>
         <?php
-            // lecture du paramètre d'url 'id' ou 0 s'il n'est pas fourni
-            $id = $_GET['id'] ?? 0;
+            $page = $_GET['page'] ?? 'home';
 
-            // conversion en nombre entier
-            $id = intval($id); 
+            $page = basename($page);
 
-            // affichage de $id
-            echo $id;
+            echo $page;
+                        
+            $path = "Views/$page.php";
 
+            echo '<br>';
+            echo $path;
 
-            // affichage conditionnel selon la valeur de $id
-            if($id > 0) {
-                echo 'L\'identifiant est '.$id;
+            if(is_file($path)) {
+                require $path;
             }
             else {
-                echo 'zéro';
+                require "Views/404.php";
             }
+
+            /*switch($page)
+            {
+                case 'home':
+                    require "Views/home.php";
+                break;
+                case 'users':
+                    require "Views/users.php";
+                break;
+                case 'roles':
+                    require "Views/roles.php";
+                break;
+                default:
+                    require "Views/404.php";
+            }*/
         ?>
+    </main>
+
+    <footer>
+        &copy; Copyright <?=date('Y'); ?> Moi
+    </footer>
 
 
-    </body>
+
+
+</body>
 </html>
