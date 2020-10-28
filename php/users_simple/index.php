@@ -14,22 +14,26 @@
 
     <main>
         <?php
+            // récupération du paramètre "page" à partir de l'url
+            // si aucun paramètre "page", la valeur par défaut sera 'home'
             $page = $_GET['page'] ?? 'home';
 
+            // supression de toute notion de chemin dans $page
             $page = basename($page);
 
             echo $page;
-                        
+                    
+            // construction du chemin vers un fichier PHP dont le nom correspont à la valeur de $page
             $path = "Views/$page.php";
 
             echo '<br>';
             echo $path;
 
-            if(is_file($path)) {
-                require $path;
+            if(is_file($path)) { // si le chemin construit pointe vers un fichier réel
+                require $path; // inclusion du fichier correspondant
             }
-            else {
-                require "Views/404.php";
+            else { // fichier non trouvé
+                require "Views/404.php"; // inclusion de la page d'erreur
             }
 
             /*switch($page)
