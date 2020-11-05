@@ -12,3 +12,4 @@ function HelloWorld2()
 }
 
 echo HelloWorld2(); // affiche la valeur retournée par la fonction HelloWorld2() : "Hello World !"
+
