@@ -10,9 +10,7 @@
 
     <?php 
 
-    require 'Models/DbConnect.php';
-    require 'Models/User.php';
-    require 'Models/Users.php';
+    require '../bootstrap.php';
 
     $users_table = new Users();
     

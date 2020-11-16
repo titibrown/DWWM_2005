@@ -15,7 +15,7 @@
      * 
      */
 
-    require 'bootstrap.php';
+    require '../bootstrap.php';
 
     $users_table = new Users();
 

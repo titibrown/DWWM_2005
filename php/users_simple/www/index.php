@@ -1,5 +1,5 @@
 <?php
-    require 'bootstrap.php';
+    require '../App/bootstrap.php';
 ?>
 <html>
 <head>
@@ -24,7 +24,7 @@
             echo $page;
                     
             // construction du chemin vers un fichier PHP dont le nom correspont à la valeur de $page
-            $path = "Views/$page.php";
+            $path = "../App/Views/$page.php";
 
             echo '<br>';
             echo $path;
@@ -33,7 +33,7 @@
                 require $path; // inclusion du fichier correspondant
             }
             else { // fichier non trouvé
-                require "Views/404.php"; // inclusion de la page d'erreur
+                require "../App/Views/404.php"; // inclusion de la page d'erreur
             }
 
             /*switch($page)
