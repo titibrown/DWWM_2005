@@ -1,4 +1,7 @@
 <?php
+
+namespace Models;
+
 /**
  * Classe d'accès aux données
  * Contient la logique d'interaction avec la table "users" (requêtes SQL)
@@ -6,7 +9,7 @@
 class Users 
 {
     /** @var PDO $pdo La connexion PDO à utiliser */
-    private PDO $pdo;
+    private \PDO $pdo;
 
 
     /**
@@ -28,7 +31,7 @@ class Users
         $statement = $this->pdo->query("SELECT * FROM users");
 
         // retourne le résultat de la requête
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     /**
@@ -52,7 +55,7 @@ class Users
         // exécution de la requête avec les valeurs
         if($statement->execute($values)) {
             // si la requête a fonctionné, récupération du résultat dans "$user"
-            $user = $statement->fetch(PDO::FETCH_ASSOC);
+            $user = $statement->fetch(\PDO::FETCH_ASSOC);
         }
         else {
             // si la requête n'a pas fonctionné

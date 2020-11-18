@@ -1,4 +1,7 @@
 <?php 
+
+namespace Models;
+
 /**
  * Classe Modèle
  * Représente 1 utilisateur de la table "users"

@@ -1,5 +1,6 @@
 <?php 
 
+
 class Router 
 {
     /** @var string $request Requête initiale (chemin demandé) */
@@ -40,15 +41,40 @@ class Router
         $this->controller = mb_convert_case($this->controller, MB_CASE_TITLE);
 
         // Ajout du suffixe 'Controller' au nom
-        $this->controller .= 'Controller';
+        $this->controller = 'Controllers\\'.$this->controller.'Controller';
 
         // Affiche la requête initiale
-        echo $this->request;
+        //echo $this->request;
 
         // Affiche le tableau construit à partir de la requête initiale
-        echo "<pre>".var_export($this->route, true)."</pre>";
+        //echo "<pre>".var_export($this->route, true)."</pre>";
 
         // Affiche le nom du contrôleur déduit.
-        echo $this->controller;
+        //echo $this->controller;
+    }
+
+
+    /**
+     * Retourne le nom du contrôleur demandé
+     */
+    public function getController()
+    {
+        return $this->controller;
+    }
+
+    /**
+     * Retourne l'action à exécuter dans le contrôleur demandé
+     */
+    public function getAction()
+    {
+       return !empty($this->route[1]) ? $this->route[1] : 'index'; 
+    }
+
+    /**
+     * Retourne la valeur du 3ème paramètre de l'url (pas encore vu ensemble)
+     */
+    public function getId()
+    {
+        return !empty($this->route[2]) ? $this->route[2] : null; 
     }
 }

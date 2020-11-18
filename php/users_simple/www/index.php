@@ -1,5 +1,5 @@
 <?php
 /**
- * Ici on charge le fichier bootstrap.php uniquement.
+ * Ici on charge le fichier bootstrap.php.
  */
 require '../App/bootstrap.php';
