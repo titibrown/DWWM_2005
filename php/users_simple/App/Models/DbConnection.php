@@ -23,4 +23,9 @@ class DbConnection
             
         return DbConnection::$pdo;
     }
+
+    private function  __construct()
+    {
+        
+    }
 }
