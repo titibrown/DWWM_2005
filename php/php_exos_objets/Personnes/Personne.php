@@ -94,4 +94,18 @@ class Personne
 
         return $this;
     }
+
+    public function getInfo()
+    {
+        return $this->_nom . ' ' . $this->_prenom . ' ' . $this->_age;
+
+        //return "$this->nom $this->prenom $this->age";
+    }
+
+    public function __toString()
+    {
+        return $this->_nom . ' ' . $this->_prenom . ' ' . $this->_age;
+
+        //return "$this->nom $this->prenom $this->age";
+    }
 }

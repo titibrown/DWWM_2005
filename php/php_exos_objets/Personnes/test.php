@@ -27,8 +27,16 @@ try
     echo $tim->setNom("White")->getNom();
     
     echo "\n";
+
+    echo 'Bonjour ' . $tim->getInfo() .' ! ';
+
+    echo PHP_EOL; // saut de ligne dans un terminal
+
+    echo 'Bonjour ' . $tim .' ! '; // appel automatique de __toString()
+
+    echo PHP_EOL; // saut de ligne dans un terminal
     
-    var_export($tim);
+   // var_export($tim);
 }
 catch(Exception $ex)
 {
