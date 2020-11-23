@@ -42,11 +42,11 @@ class Personne
 
         $this->_prenom = $prenom;
 
-        $today = new DateTime();
+        $today = new DateTime(); // new DateTime sans paramètre = date du jour
 
-        $diff = $today->diff($datenaissance);
+        $diff = $today->diff($datenaissance); // différence entre la date du jour et la date de naissance
 
-        $this->_age = $diff->y;
+        $this->_age = $diff->y; // le nombre d'années de différence = l'age de la personne
     }
 
     /** 
@@ -84,8 +84,11 @@ class Personne
      */
     public function setNom(string $nom) : self
     {
+        // Si le nom est vide, on lève une exception avec le message d'erreur à remonter en paramètre.
+        // cette exception sera "attrapée" dans le code utilisant cette métohde (voir test.php)
         if(empty($nom)) {
             throw new Exception("Le nom est vide !");
+            // lorsqu'une exception est levée, l'exécution de la méthode s'interrompt.
         }
 
         $this->_nom = $nom;
