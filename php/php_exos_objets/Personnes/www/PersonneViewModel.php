@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Validation du formulaire de page view_Personne.php
  * 
@@ -91,6 +89,7 @@ class PersonneViewModel
             }
 
             $this->datenaissance = $_date;
+            
         } catch (Exception $ex) {
             exit('Date invalide');
         }

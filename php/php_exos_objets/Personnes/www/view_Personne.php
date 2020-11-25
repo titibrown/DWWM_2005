@@ -1,5 +1,6 @@
 <?php
-//require 'proc_Personne.php';
+// on inclut le fichier de traitement du formulaire 
+require 'proc_Personne.php';
 ?>
 <html>
 
@@ -30,8 +31,21 @@
 
 <body>
     <h1>Personnes</h1>
+    <section>
+        
+        <?php
+        // si une entrée 'personne' existe dans la session en cours
+            if(!empty($_SESSION['personne'])) {
+                $personne = unserialize($_SESSION['personne']); // deserialisation de la personne
+                echo 'Personne ajoutée: '. $personne->getNom(); // affichage du nom
+                //$_SESSION['personne'] = null;
+                unset($_SESSION['personne']); // suppression de l'objet personne de la session
+            }
+        ?>
+    
+    </section>
 
-    <form action="proc_Personne.php" id="monForm" method="post">
+    <form action="view_Personne.php" id="monForm" method="post">
 
         <div class="form-item">
             <label for="id_nom">Nom: </label>
@@ -50,6 +64,8 @@
         <!-- <input type="submit" value="Valider"> -->
         <button type="submit">Valider</button>
     </form>
+
+    <img src="http://localhost/img.php?token=acdf345FCD3433" />
 
     <script>
         document.getElementById("monForm").addEventListener('submit', function(event) {
