@@ -1,13 +1,17 @@
 <?php 
-
-require 'User.php';
-
+/**
+ * Classe Users
+ * Simule une base de données d'utilisateurs
+ */
 class Users 
 {
-    /** @var User[] $users */
+    /** @var User[] $users les utilisateurs */
     private array $users;
 
 
+    /**
+     * Initalisation de la collection d'utilisateurs
+     */
     public function __construct()
     {
         $this->users = [
@@ -19,9 +23,16 @@ class Users
         ];
     }
 
+    /**
+     * Recherche un utilisateur par son username
+     * @param string $_username le nom d'utilisateur à rechercher
+     * @return User|null l'utilisateur trouvé ou null si aucun utilisateur correspondant trouvé
+     */
     public function getUserByName(string $_username) : ?User
     {
+        // parcours de la collection d'utilisateurs
         foreach($this->users as $user) {
+            // si les username correspodent
             if($_username === $user->getUsername()) {
                 return $user;
             }
@@ -33,6 +44,8 @@ class Users
 
 /*$users = new Users();
 
-var_export($users);*/
+var_export($users->getUserByName('Toto'));
 
+//var_export($users);
+*/
 
