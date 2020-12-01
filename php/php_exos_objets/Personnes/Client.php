@@ -9,21 +9,23 @@
  */
 class Client extends Personne
 {
-    /** @var int $id Identifiant du client */
-    private int $id;
+    /** @var int $_id Identifiant du client */
+    private int $_id;
 
-    /** @var Adresse $adresse Adresse du client */
-    private Adresse $adresse;
+    /** @var Adresse $_adresse Adresse du client */
+    private Adresse $_adresse;
     
     /**
      * Initialisation d'un client
      * @param int $_id L'identifiant du client
      * @param Adresse $_adresse L'adresse du client
      */
-    public function __construct(int $_id, Adresse $_adresse) 
+    public function __construct(string $nom, string $prenom, DateTime $datenaissance, int $_id, Adresse $_adresse) 
     {
-        $this->id = $_id;
-        $this->adresse = $_adresse;
+        parent::__construct($nom, $prenom, $datenaissance);
+
+        $this->_id = $_id;
+        $this->_adresse = $_adresse;
     }
 
 }

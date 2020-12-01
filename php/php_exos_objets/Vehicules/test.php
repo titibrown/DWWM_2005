@@ -17,7 +17,10 @@ $v1 = new Voiture($moteur);
 $v2 = new Voiture($moteur);
 
 
+// $moteur = null;
 
+$v1 = null;
+$v2 = null;
 
 
 /** COMPOSITION 
@@ -26,3 +29,5 @@ $v2 = new Voiture($moteur);
 */
 
 $v2 = new Voiture(new Moteur());
+
+$v2 = null;

@@ -11,7 +11,7 @@ class PersonneViewModel
     /** @var string $nom Le nom de la personne */
     private string $nom = '';
 
-    /** @var string $prenom Le prénomnom de la personne */
+    /** @var string $prenom Le prénom de la personne */
     private string $prenom = '';
 
     /** @var DateTime $datenaissance La date de naissance de la personne */
@@ -20,7 +20,7 @@ class PersonneViewModel
 
     public function __construct()
     {
-        // Si un des champs requis est vide
+        // Si un des champs requis est vide 
         if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['datenaissance'])) {
             exit('Formulaire incomplet');
         }
