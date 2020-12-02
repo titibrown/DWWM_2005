@@ -1,6 +1,6 @@
 <?php 
 
-class User 
+class FakeUser 
 {
     /** @var string $username Nom d'utilisateur */
     private string $username;

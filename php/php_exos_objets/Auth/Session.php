@@ -13,7 +13,7 @@ class Session
      * Retour l'utilisateur stocké en session
      * @return User|null l'utilisateur stocké en session ou null si aucun utilisateur
      */
-    static public function getUser() : ?User
+    static public function getUser() : ?FakeUser
     {
         return $_SESSION['user'] ?? null;
     }
@@ -48,7 +48,7 @@ class Session
     /**
      * Identifie un utilisateur
      */
-    static public function Auth()
+    static public function Auth(IUserCollection $users)
     {
         // si le formulaire d'identification a été soumis
         if(!empty($_POST['username']) && !empty($_POST['password'])) {
@@ -57,25 +57,13 @@ class Session
             $username = strip_tags($_POST['username']); // suppression des balises HTML
             $username = basename($username); // suppression de toute notion de "chemin"
             $password = strip_tags($_POST['password']);
-            
-            $users = new Users();
 
-            $user = $users->getUserByName($username);
-
-            // si l'utilisateur existe
-            if($user !== null) {
-
-                // si le mot de passe est correct
-                if($user->login($password) === true) {
-
-                    $_SESSION['user'] = $user;
-
-                    // redirection vers l'espace membres (header + exit)
-                    header('location: espace_membres.php');
-                    exit; 
-                }
-
-            }
+            if($users->login($username, $password) === true) {
+                $_SESSION['user'] = $users->getLoggedUser();
+                // redirection vers l'espace membres (header + exit)
+                header('location: espace_membres.php');
+                exit; 
+            }       
 
             // si la redirection ci-dessus n'a pas eu lieu
             // cela signifie que l'utilisateur est inexistant ou que le mot de passe est incorrect 
