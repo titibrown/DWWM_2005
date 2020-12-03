@@ -1,6 +1,7 @@
 <?php
+
 require 'Session.php';
-Session::Auth(new FakeUsers());
+Session::Auth(new RealUsers());
 ?>
 <form method="post">
     <input type="text" name="username">

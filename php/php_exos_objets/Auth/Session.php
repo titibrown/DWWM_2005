@@ -1,7 +1,11 @@
 <?php 
-
-require_once 'User.php';
-require_once 'Users.php';
+require_once 'Db.php';
+require_once 'IUSerCollection.php';
+require_once 'UserModel.php';
+require_once 'FakeUser.php';
+require_once 'FakeUsers.php';
+require_once 'RealUser.php';
+require_once 'RealUsers.php';
 
 // démarre une session PHP (obligatoire pour manipuler la variable $_SESSION)
 session_start();

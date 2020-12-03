@@ -1,6 +1,7 @@
 <?php 
 
 require_once 'IUserCollection.php';
+require_once 'FakeUser.php';
 /**
  * Classe Users
  * Simule une base de données d'utilisateurs
@@ -10,6 +11,7 @@ class FakeUsers implements IUserCollection
     /** @var FakeUser[] $users les utilisateurs */
     private array $users;
 
+    /** @var null|FakeUser $loggedUser L'utilisateur actuellement connecté (vide si utilisateur non identifié) */
     private ?FakeUser $loggedUser;
 
     /**
@@ -46,7 +48,12 @@ class FakeUsers implements IUserCollection
         return null;
     }
 
-
+    /**
+     * Identifie un utilisateur
+     * @param string $_username Le nom d'utilisateur
+     * @param string $_password Le mot de passe de l'utilisateur
+     * @return bool true si identification réussie, sinon false
+     */
     public function login(string $_username, string $_password) : bool
     {
         $user = $this->getUserByName($_username);
@@ -63,7 +70,11 @@ class FakeUsers implements IUserCollection
         return false;
     }
 
-    public function getLoggedUser() : ?FakeUser
+    /**
+     * Retourne l'utilisateur identifié
+     * @return null|UserModel L'utilisateur identifié ou null si non identifié
+     */
+    public function getLoggedUser() : ?UserModel
     {
         return $this->loggedUser;
     }

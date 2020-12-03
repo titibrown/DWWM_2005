@@ -1,6 +1,6 @@
 <?php 
 
-class FakeUser 
+class FakeUser extends UserModel
 {
     /** @var string $username Nom d'utilisateur */
     private string $username;
@@ -22,19 +22,9 @@ class FakeUser
         $this->password = password_hash($_password, PASSWORD_BCRYPT);
     }
 
-    /**
-     * Vérifie si le mot de passe fourni en argument correspond au mot de passe de l'utilisateur
-     * @param string $_password le mot de passe à tester
-     * @return bool true si le mot de passe correspond, sinon false
-     */
-    public function login(string $_password)
+    protected function getPassword() : string
     {
-        // password_verify: vérifie qu'un mot de passe en clair correspond au mot de passe chiffré
-        if(password_verify($_password, $this->password)) {
-            return true;
-        }
-
-        return false;
+        return $this->password;
     }
 
     /**
