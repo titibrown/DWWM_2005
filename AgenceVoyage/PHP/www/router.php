@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * ROUTER.PHP
  * Permet de simuler les réécritures d'url
@@ -8,9 +9,6 @@
  * 2° tapez la commande :   "php -S localhost:80 router.php"
  * 3° ouvrez un navigateur et naviguez vers http://localhost
  */
-// ROUTER PHP : .
-// Utilisation
-// 
 
 /**
  * $_SERVER['REQUEST_URI'] = chemin demandé
@@ -30,5 +28,4 @@ else {
 
 // la ligne suivante fait exactement la même chose que la structure IF ci-dessus
 // on utilise l'opérateur ternaire (? et :) à la place du IF/ELSE
-return !file_exists(__DIR__ .$_SERVER['REQUEST_URI']) ? require (__DIR__.'/index.php') : false;
-
+return !file_exists(__DIR__ . $_SERVER['REQUEST_URI']) ? require(__DIR__ . '/index.php') : false;

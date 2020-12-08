@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ROUTAGE PHP MVC
  * 
@@ -11,7 +12,7 @@
  * ex: 
  * pour l'url http://localhost/users/login
  * on instancie le contrôleur "users" et on y exécute la méthode "login"
-*/
+ */
 
 
 
@@ -61,8 +62,7 @@ echo '<pre>' . var_export($route, true);
  * 1er élément  : Nom du contrôleur à invoquer
  * 2ème élément : Nom de la méthode à exécuter dans la contrôleur invoqué
  * 3ème élément : PAramètre à envoyer dans la méthode exécutée (typiquement, un identifiant)
-*/
-
+ */
 
 
 // récupération du 1er élement du tableau. S'il est vide ou inexistant, on attribue une valeur par défaut
