@@ -18,7 +18,7 @@ RewriteEngine On
 # ET 
 # Si la requête (REQUEST_FILENAME) ne mène pas vers un fichier existant !-f
 # 
-#
+# 
 # Si au moins 1 des 2 conditions renvoie faux :
 #  --- la requête se pousuit normalement
 #
@@ -27,7 +27,8 @@ RewriteEngine On
 #
 # La règle de réécriture redirige la requête vers le fichier /users_simple/index.php 
 
+
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ /users_simple/index.php 
+RewriteRule ^(.*)$ /users_simple/index.php
 
