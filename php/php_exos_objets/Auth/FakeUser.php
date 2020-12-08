@@ -34,4 +34,5 @@ class FakeUser extends UserModel
     {
         return $this->username;
     }
+
 }

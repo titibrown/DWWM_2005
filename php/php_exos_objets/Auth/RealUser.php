@@ -24,6 +24,6 @@ class RealUser  extends UserModel
      */ 
     public function getUsername(): string
     {
-        return $this->username;
+        return $this->user_name;
     }
 }

@@ -15,9 +15,9 @@ class Session
 
     /**
      * Retour l'utilisateur stocké en session
-     * @return User|null l'utilisateur stocké en session ou null si aucun utilisateur
+     * @return UserModel|null l'utilisateur stocké en session ou null si aucun utilisateur
      */
-    static public function getUser() : ?FakeUser
+    static public function getUser() : ?UserModel
     {
         return $_SESSION['user'] ?? null;
     }

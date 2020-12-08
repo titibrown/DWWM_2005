@@ -4,4 +4,8 @@ Session::isValidUser();
 
 ?>
 <h1>Espace membres</h1>
-<?php echo Session::getUser()->getUsername(); ?>
+<?php 
+$user = Session::getUser();
+echo $user->getUsername();
+echo '<br>';
+echo Session::getUser()->getUsername(); ?>

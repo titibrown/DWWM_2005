@@ -8,6 +8,7 @@
  */
 abstract class UserModel 
 {
+
      /**
      * Vérifie si le mot de passe fourni en argument correspond au mot de passe de l'utilisateur
      * @param string $_password le mot de passe à tester
@@ -22,6 +23,9 @@ abstract class UserModel
 
         return false;
     }
+
+
+    abstract public function getUsername(): string;
 
     /**
      * Accesseur pour le mot de passe de l'utilisateur
