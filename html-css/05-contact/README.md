@@ -5,7 +5,7 @@
 - `Téléphone` : format 10 chiffres. Le premier chiffre est obligatoirement un 0
 - `Message` : au moins 20 caractères, validation complète en backend.
 
-Cas particulier `Téléphone` + `Message`
+Cas particulier `Téléphone` + `Email`
 - Au moins l'un des 2 doit être renseigné et valide, peut-importe lequel.
 - Si les 2 sont renseignés et valides, c'est également OK ;)
 
