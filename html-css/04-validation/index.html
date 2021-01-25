@@ -1,34 +1,32 @@
 <html>
 
 <head>
-
-    <head>
-        <meta charset="utf-8">
-        <title>Validation</title>
-        <link rel="stylesheet" href="main.css">
-        <script src="main.js"></script>
-    </head>
+    <meta charset="utf-8">
+    <title>Validation</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
 </head>
 
 <body>
-    <h1>Validation</h1>
+    <h1 id="titre">Validation</h1>
 
     <form action="validation.php" method="post" class="myForm" enctype="multipart/form-data">
 
         <fieldset>
-            <legend>Types TEXTES</legend>
+            <legend id="legend">Types TEXTES</legend>
 
             <div>
                 <label>Texte</label>
-                <input type="text" name="text" placeholder="Votre nom" minlength="" maxlength="" pattern="" required="true">
+                <input type="text" id="nom" name="text" placeholder="Votre nom" pattern="[a-zA-Z]+" title="ABC" required="true">
             </div>
-            <div>
+            <div id="passwordContainer">
                 <label>Password</label>
-                <input type="password" name="password">
+                <input type="password" name="password" pattern="[a-zA-Z]{8,16}" title=""> 
+                <span class="rouge">afficher/masquer</span> <span>je ne sers à rien</span>
             </div>
             <div>
                 <label>Email</label>
-                <input type="email" name="email">
+                <input type="email" name="email" required="required">
             </div>
             <div>
                 <label>Search</label>
@@ -36,7 +34,7 @@
             </div>
             <div>
                 <label>Url</label>
-                <input type="url" name="url">
+                <input type="url" name="url" pattern="">
             </div>
             <div>
                 <label>Téléphone</label>
