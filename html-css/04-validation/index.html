@@ -17,7 +17,8 @@
 
             <div>
                 <label>Texte</label>
-                <input type="text" id="nom" name="text" placeholder="Votre nom" pattern="[a-zA-Z]+" title="ABC" required="true">
+                <input value="" type="text" id="nom" name="text" placeholder="Votre nom" pattern="^[a-zA-Z]+$" title="ABC" required="true">
+                <span id="validationNom"></span>
             </div>
             <div id="passwordContainer">
                 <label>Password</label>

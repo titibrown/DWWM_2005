@@ -23,6 +23,7 @@ Cas particulier `Téléphone` + `Email`
 
 ## Pour vous aider : 
 
+- [Formulaire HTML](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Mon_premier_formulaire_HTML)
 - [Gestion des évènements avec Javascript](https://www.pierre-giraud.com/javascript-apprendre-coder-cours/addeventlistener-gestion-evenement/)
 - [Modifier le contenu d'un élément HTML](https://www.w3schools.com/jsref/prop_html_innerhtml.asp)
 - [Créer un élément HTML avec Javascript](https://developer.mozilla.org/fr/docs/Web/API/Document/createElement)

@@ -48,3 +48,15 @@ label {
 .rouge {
     background-color: red;
 }
+
+.success {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: .9em;
+    padding: 2px;
+}
