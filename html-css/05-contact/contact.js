@@ -10,7 +10,7 @@
  * 1) Adapter les attributs "pattern" du formulaire (contact.html)
  * 2) Ajouter les évènements nécessaires pour valider chaque champ "en temps réel" (onkeyup, onkeypress...)
  * 3) Compléter le code de l'évènement "submit" se trouvant en bas de ce fichier.
- * 4) Ajouter les règles CSS que vous jugerez utilies dans les classes .success et .error du fichier main.css
+ * 4) Ajouter les règles CSS que vous jugerez utilies dans les classes .success et .error du fichier contact.css
  * 5) (Bonus) Valider le formulaire coté backend dans le fichier "contact_validation.php"
  */
 

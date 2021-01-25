@@ -15,8 +15,8 @@ Cas particulier `Téléphone` + `Email`
 
 1) Adapter les attributs `pattern` du formulaire (`contact.html`)
 2) Ajouter les évènements nécessaires pour valider chaque champ "en temps réel" (onkeyup, onkeypress...)
-3) Compléter le code de l'évènement `submit` se trouvant à la fin du fichier `main.js`.
-4) Ajouter les règles CSS que vous jugerez nécessaires dans les classes `.success` et `.error` du fichier `main.css`
+3) Compléter le code de l'évènement `submit` se trouvant à la fin du fichier `contact.js`.
+4) Ajouter les règles CSS que vous jugerez nécessaires dans les classes `.success` et `.error` du fichier `contact.css`
     - pour bien différencier les 2
 5) (Bonus) Valider le formulaire coté backend dans le fichier `contact_validation.php`
 
