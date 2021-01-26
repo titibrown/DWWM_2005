@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: cadetblue;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+progress {
+    display: block;
+    height: 20px;
+    width: 180px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    background: linear-gradient(#111, #FF0);
+}
+
+progress:hover {
+    border-color: red;
+}
+
+
