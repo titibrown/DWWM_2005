@@ -22,3 +22,11 @@ progress:hover {
 }
 
 
+
+#log {
+    width: 800px;
+    margin: 1em auto;
+    padding: 1em;
+    border: 1px solid #111;
+    border-radius: 5px;
+}
