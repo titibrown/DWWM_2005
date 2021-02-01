@@ -18,20 +18,36 @@ class MyCars
         if((this.data == null) || (force === true)) {
             this.data = data;
         }
-
-        this.element.innerHTML = "";
         
-        let carList = document.createElement('ol'); // 
-    
-        for (let i=0; i < data.length; i++) {
-    
-            let myCar = data[i];
-            let aCar = document.createElement('li');
-            aCar.innerHTML = myCar.car_name + " " + myCar.car_weight + " " + myCar.car_origin;
-            carList.append(aCar);
-    
+        // vidage du contenu actuel
+        this.element.innerHTML = "";
+
+        // pour chaque voiture de la collection
+        for (let myCar of data) {
+
+            // création d'une nouvelle ligne de tableau
+            let line = document.createElement('tr'); 
+
+            // création des cellules
+            let tdId = document.createElement('td'); // cellule ID
+            let tdName = document.createElement('td'); // cellule Nom
+            let tdWeight = document.createElement('td'); // cellule Poids
+            let tdOrigin = document.createElement('td'); // cellule Origine
+
+            // ajout des données dans les cellules
+            tdId.innerHTML = myCar.car_id;
+            tdName.innerHTML = myCar.car_name;
+            tdWeight.innerHTML = myCar.car_weight;
+            tdOrigin.innerHTML = myCar.car_origin;
+
+            // ajout des cellules à la ligne courante
+            line.appendChild(tdId);
+            line.appendChild(tdName);
+            line.appendChild(tdWeight);
+            line.appendChild(tdOrigin);
+
+            // ajout de la ligne au tableau
+            this.element.appendChild(line);
         }
-    
-        this.element.append(carList);
     }
 }

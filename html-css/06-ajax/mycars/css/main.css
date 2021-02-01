@@ -30,3 +30,38 @@ progress:hover {
     border: 1px solid #111;
     border-radius: 5px;
 }
+
+table {
+    margin-top: 1em;
+    border: 1px solid #111;
+    border-spacing : 0;
+    border-collapse : collapse;
+}
+
+th, td {
+    border: 0;
+    margin: 0;
+    padding: 5px;
+}
+
+th {
+    background-color: #111;
+    color: #FFF;
+    text-align: left;
+}
+
+th:not(:first-child) {
+    border-left: 1px solid #333;
+}
+
+tr:nth-child(odd) {
+    background-color: #CCC;
+}
+
+td {
+    border: 1px solid #111;
+}
+
+td:first-child {
+    color: blue;
+}
