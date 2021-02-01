@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ajax</title>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/MyCars.js" defer></script>
+        <script src="/js/ApiCars.js" defer></script>
+        <script src="/js/main.js" defer></script>
+    </head>
+    <body>
+        <h1>Ajax</h1>
+        <main>
+            <button id="btnLoad">Charger les données</button> 
+            <input id="search" type="search" placeholder="Rechercher">
+            <select id="orderby">
+                <option value="0">Tri</option>
+                <option value="1">Poids [a-z]</option>
+                <option value="2">Poids [z-a]</option>
+                <option value="3">Année</option>
+                <option value="4">Pays</option>
+            </select>
+            <!-- le div ci-dessous sera le container de notre application JS-->
+            <div id="log">
+                
+            </div>
+        </main>
+    </body>
+</html>
