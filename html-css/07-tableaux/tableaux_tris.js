@@ -1,4 +1,3 @@
-
 // tableau de string
 const names = ['Joe', 'Léo', 'Mike', 'Léa', 'Jack'];
 
