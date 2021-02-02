@@ -49,5 +49,64 @@ class MyCars
             // ajout de la ligne au tableau
             this.element.appendChild(line);
         }
+        
+        this.setCriteriaBrand(data);
+    }
+
+    /**
+     * Parcourir le tableau data
+     * isoler le nom de chaque voiture
+     * isoler la marque dans chaque nom de voiture (la 1ere patie du nom)
+     * @param Array data 
+     */
+    setCriteriaBrand(data)
+    {
+
+       /* for(let item of cars)
+        {
+
+        } */
+
+        console.log();
+
+        let selectBrand = document.getElementById('brands');
+        let dataBrands = [];
+        
+        data.forEach((item) => {
+            let brand = item.car_name.split(' ')[0];
+            if(!dataBrands.includes(brand)) {
+                dataBrands.push(brand);
+                let newOption = document.createElement('option');
+                newOption.text = brand;
+                newOption.value = brand;
+                selectBrand.appendChild(newOption);
+            }            
+        });
+        
+        selectBrand.options.sort();
+
+        console.log(selectBrand.options);
+
+
+/*
+        let selectBrand = document.getElementById('brands');
+        let dataBrands = [];
+        
+        data.forEach((item) => {
+            let brand = item.car_name.split(' ')[0];
+            dataBrands.push(brand);
+                    
+        });
+
+        let uniqueBrands = new Set(dataBrands);
+        uniqueBrands = [...uniqueBrands];
+
+        for(let item of uniqueBrands) {
+            let newOption = document.createElement('option');
+            newOption.text = brand;
+            newOption.value = brand;
+            selectBrand.appendChild(newOption);
+        }
+*/
     }
 }
