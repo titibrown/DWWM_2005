@@ -6,7 +6,7 @@ Ajouter un bouton dans les cartes permettant de supprimer celle-ci
 
 Ajouter un bouton toggle like/dislike
 
-Ajouter un filtre par catégorie (de type cases à cocher) en supposant qu'on ne les connaisse pas à l'avance (il faut donc les récupérer dynamiquement depuis les films). Si tous les films d'une catégorie sont supprimés, celle-ci ne doit plus appraître dans lesz filtres.
+Ajouter un filtre par catégorie (de type cases à cocher) en supposant qu'on ne les connaisse pas à l'avance (il faut donc les récupérer dynamiquement depuis les films). Si tous les films d'une catégorie sont supprimés, celle-ci ne doit plus appraître dans les filtres.
 
 Ajouter un système de pagination avec les fonctionnalités suivantes:
 

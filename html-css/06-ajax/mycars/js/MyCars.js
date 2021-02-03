@@ -56,24 +56,18 @@ class MyCars
     /**
      * Parcourir le tableau data
      * isoler le nom de chaque voiture
-     * isoler la marque dans chaque nom de voiture (la 1ere patie du nom)
+     * isoler la marque dans chaque nom de voiture (la 1ere partie du nom)
      * @param Array data 
      */
     setCriteriaBrand(data)
     {
-
-       /* for(let item of cars)
-        {
-
-        } */
-
         console.log();
 
         let selectBrand = document.getElementById('brands');
         let dataBrands = [];
         
         data.forEach((item) => {
-            let brand = item.car_name.split(' ')[0];
+            let brand = item.car_name.split(' ')[0]; 
             if(!dataBrands.includes(brand)) {
                 dataBrands.push(brand);
                 let newOption = document.createElement('option');
@@ -83,30 +77,18 @@ class MyCars
             }            
         });
         
-        selectBrand.options.sort();
+        //selectBrand.options.sort();
 
         console.log(selectBrand.options);
 
+        this.setWeightRange(data);
+    }
 
-/*
-        let selectBrand = document.getElementById('brands');
-        let dataBrands = [];
-        
-        data.forEach((item) => {
-            let brand = item.car_name.split(' ')[0];
-            dataBrands.push(brand);
-                    
-        });
-
-        let uniqueBrands = new Set(dataBrands);
-        uniqueBrands = [...uniqueBrands];
-
-        for(let item of uniqueBrands) {
-            let newOption = document.createElement('option');
-            newOption.text = brand;
-            newOption.value = brand;
-            selectBrand.appendChild(newOption);
-        }
-*/
+    setWeightRange(data)
+    {
+        triTableauDObjets(data, 'car_weight');
+        let weightRange = document.getElementById('weightRange');
+        weightRange.min = data[0].car_weight;
+        weightRange.max = data[data.length-1].car_weight;
     }
 }

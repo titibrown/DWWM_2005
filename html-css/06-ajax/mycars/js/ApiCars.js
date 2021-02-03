@@ -19,3 +19,26 @@ class ApiCars
         });
     }
 }
+
+/*
+myClass = function(name) {
+    this.name = name;
+}
+
+myClass.prototype.getName = function()
+{
+    return this.name;
+}
+
+Array.prototype.push = function()
+{
+
+}
+
+
+
+myObj = new myClass("Mike");
+myObj2 = new myClass("Mike");
+
+myObj.getName();
+*/

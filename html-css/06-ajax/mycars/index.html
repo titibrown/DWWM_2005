@@ -14,8 +14,8 @@
             <input id="search" type="search" placeholder="Rechercher">
             <select id="orderby">
                 <option value="0">Tri</option>
-                <option value="1">Poids [a-z]</option>
-                <option value="2">Poids [z-a]</option>
+                <option value="1">Poids [ASC]</option>
+                <option value="2">Poids [DESC]</option>
                 <option value="3">Année</option>
                 <option value="4">Pays</option>
             </select>
@@ -24,9 +24,10 @@
 
             <form id="frmCriterias">
                 <select id="brands">
-                    <option>Marque</option>
+                    <option value="0">Marque</option>
                 </select>
-                <button>Appliquer les filtres</button>
+                <input id="weightRange" type="range" name="range" min="1" max="100">
+                <button type="submit">Appliquer les filtres</button>
             </form>
 
 
