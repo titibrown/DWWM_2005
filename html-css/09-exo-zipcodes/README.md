@@ -8,12 +8,12 @@ Ces informations sont stockées dans le fichier "zipcodes.json" et doivent être
 L'utilisateur peut saisir un code postal ou le nom d'une ville. 
 Durant la saisie, chaque ville correspondant à la recherche est affichée sous forme de suggestion.
 
-Pour les sugggestions, vous utiliserez l'élément datalist :
+Pour les suggestions, vous utiliserez l'élément datalist :
 - https://developer.mozilla.org/fr/docs/Web/HTML/Element/datalist
 
 
 Une fois la ville sélectionnée, le bouton OK soumet le formulaire.
-Une fonction intercepte le formulaire et affiche les informtions complètes de la ville au format JSON (dans un div par exemple).
+Une fonction intercepte le formulaire et affiche les informations complètes de la ville au format JSON (dans un div par exemple).
 
 
 
