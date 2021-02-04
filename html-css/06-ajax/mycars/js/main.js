@@ -26,7 +26,7 @@ document.getElementById('btnLoad').addEventListener('click', () => {
 
 document.getElementById('search').addEventListener('keyup', () => {
 
-    let data = mycars.data;
+    let data = mycars.data.slice();
     let searchValue = document.getElementById('search').value;
     let result = [];
 
@@ -50,7 +50,7 @@ document.getElementById('orderby').addEventListener('change', () => {
     var val = document.getElementById('orderby').value;
     console.log(val);
 
-    let data = mycars.data;
+    let data = mycars.data.slice();
 
     console.log(data);
 
@@ -78,7 +78,7 @@ document.getElementById('orderby').addEventListener('change', () => {
 document.getElementById("frmCriterias").addEventListener('submit', (event) => {
     event.preventDefault();
 
-    let data = mycars.data;
+    let data = mycars.data.slice();
     let selectedBrand = document.getElementById('brands').value;
     let selectedWeight = document.getElementById('weightRange').value;
     let allCars;
