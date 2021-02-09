@@ -1,54 +1,82 @@
 # Cereals
 
-Pour cet exercice, vous devez créer une application web affichant la liste des céréales accessibles à partir d'une API. 
-Les informations proviennent d'une API fictive et sont rendues disponibles à travers une API REST disponible à cette adresse : 
+Pour cet exercice, vous devez créer une application web de gestion d'une liste des céréales du petit-déjeuner. 
+Les informations proviennent d'une API fictive et sont disponibles à travers une API REST disponible à cette adresse : 
 - https://devoldere.net/api/cereals/
 
-Les céréales sont listés dans un tableau, avec les informations suivantes :
-- ID 
-- Name 
-- Calories 
-- Protéïnes
-- Sel
-- Fibres
-- Glucides
-- Sucre
-- Potassium
-- Vitamines
-- Évaluation
+L'API retourne une collection de céréales avec les informations suivantes :
 
-Les différents composants sont exprimés en g/100g (nombre de grammes pour 100g de produit fini).
-Une valeur égale à "-1" signifie que la donnée n'est pas disponible pour ce céréale.
+ID | Name | Calories | Protéïnes | Sel | Fibres | Glucides | Sucre | Potassium | Vitamines | Évaluation
+
+![exemple](img/cereals_api.png)
+
+Note: Une valeur égale à "-1" signifie que la donnée n'est pas disponible pour ce céréale.
 
 
-Vous ajouterez au tableau :
+## Création de l'interface utilisateur
 
-- Une colonne contenant le nutri-score (de A à E) calculé selon l'évaluation :
+- Les informations des céréales doivent apparaitre dans un tableau.
+- L'entête de la page contient le titre, un champ de recherche et des filtres de recherche.
+- Les entêtes des colonnes permettent le tri croissant / décroissant des valeurs de ces colonnes.
+
+![exemple](img/cereals_ui.png)
+
+#### Ligne de tableau survolée :
+
+![exemple](img/cereals_uihover.png)
+
+### Couleurs
+
+![exemple](img/cereals_colors.png)
+
+
+#### Colonne "NutriScore" (NS)
+
+Le nutri-score (de A à E) calculé selon l'évaluation :
     - A: Plus de 80%
     - B: Entre 70% et 80%
     - C: Entre 55% et 70%
     - D: Entre 35% et 55%
     - E: Moins de 35%
-- Une colonne d'actions contenant un bouton d'action permettant de supprimer un céréale du tableau
-- Le décompte du nombre de céréales affiché en-pied de la colonne ID.
+
+
+#### Colonne "DEL"
+
+La croix rouge permet de supprimer un céréale de l'affichage. Les éléments supprimés ne sont plus disponibles tant que la page n'est pas rechargée. 
+
+
+### Éléments supplémentaires
+
+Vous ajouterez également au tableau :
+
+- Le décompte du nombre de céréales affiché en-pied de la colonne Name.
 - La moyenne des calories affichée en-pied de la colonne Calories.
-- Un bouton de tri dans les entêtes de colonne Calories, Sel et Evaluation permet le tri croissant / décroissant des valeurs de ces colonnes.
+
+![exemple](img/cereals_foot.png)
 
 
+### Filtres et Recherche
 
-L'interface présentera également :
+L'application proposera des fonctionnalités de recherche en temps réel:
 
-- Un champs de recherche pour rechercher un céréale par son nom
+- Un champ de recherche pour rechercher un céréale par son nom
+
+![exemple](img/cereals_search.png)
+
 - Une recherche multi-critères permettant d'afficher :
-    - les céréales ayant un nutri-score particulier (A,B,C,D ou E)
-    - +
+    - les céréales ayant un ou plusieurs nutri-score(s) particulier(s) (A,B,C,D ou E)
+    - ET
     - les céréales "sans sucre" (taux de sucre inférieur à 1)
-    - ou
+    - OU
     - les céréales pauvres en sel (taux de sel inférieur à 50)
-    - ou
+    - OU
     - les céréales "boost" (taux de vitamines supérieur ou égal à 25 + taux de fibres supérieur ou égal à 10)
 
+![exemple](img/cereals_filter.png)
 
 
-L’affichage « en français » devrait ressembler à la capture suivante :
+## Fonctionnement
 
+1. Au chargement, l'application télécharge les données via l'api.
+2. Les données sont affichées dans le tableau HTML.
+3. L'utilisateur peut utiliser la recherche, les filtres et les boutons de suppression.
