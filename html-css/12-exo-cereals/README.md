@@ -1,4 +1,4 @@
-# Cereals
+# Cereals 
 
 Pour cet exercice, vous devez créer une application web de gestion d'une liste des céréales du petit-déjeuner. 
 Les informations proviennent d'une API fictive et sont disponibles à travers une API REST disponible à cette adresse : 
