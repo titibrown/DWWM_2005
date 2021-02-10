@@ -32,12 +32,13 @@ Note: Une valeur égale à "-1" signifie que la donnée n'est pas disponible pou
 
 #### Colonne "NutriScore" (NS)
 
-Le nutri-score (de A à E) calculé selon l'évaluation :
-    - A: Plus de 80%
-    - B: Entre 70% et 80%
-    - C: Entre 55% et 70%
-    - D: Entre 35% et 55%
-    - E: Moins de 35%
+Le nutri-score (de A à E) est calculé selon l'évaluation :
+
+- A: Plus de 80%
+- B: Entre 70% et 80%
+- C: Entre 55% et 70%
+- D: Entre 35% et 55%
+- E: Moins de 35%
 
 
 #### Colonne "DEL"

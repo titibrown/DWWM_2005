@@ -11,7 +11,7 @@ class ApiCards
             return response.json(); // conversion du json réceptionné en objet JS
         })
         .then((json) => {
-            console.log(json); // appel de la fonction readCars avec les données des cars en parametre
+            console.log(json); // affichage de l'objet JS dans la console
         })
         .catch((error) => {
             // next...
