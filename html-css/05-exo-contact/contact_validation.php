@@ -1,13 +1,49 @@
 <?php
 
 // Si pas de formulaire soumis, redirection vers le formulaire
-if(empty($_POST)) {
+/*if(empty($_POST)) {
     header('location: contact.html');
     exit;
-}
+}*/
 
 $isValid = false; // par défaut, le formulaire est considéré comme invalide.
 
+
+
+/*
+Elements à éliminer
+    - balises html   --> strip_tags($str);
+    " ' / \ < > * \0  --> regex + html_entities($str)
+    - espace en debut et fin de chaine   --> trim($str) / ltrim($str) / rtrim($str)
+
+Valider un email 
+    regex
+    filter_var($str, FILTER_VALIDATE_EMAIL);
+Valider un numéro de téléphone 
+    regex
+    
+Valider un nombre entier
+intval($int);
+
+Valider un nombre float
+floatval($float);
+
+Valider un numérique 
+is_numeric($number)
+
+Valider une date 
+    try { new DateTime($date); } catch { }
+*/
+
+var_export($_POST);
+
+$name = $_POST['contactName'];
+
+if(preg_match('/^[A-Za-z0-9]+$/', $name)) {
+    echo 'Nom OK';
+}
+
+exit;
 
 /**
  * TODO : 
