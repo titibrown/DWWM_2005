@@ -51,17 +51,10 @@ contactForm.addEventListener('submit', (event) => {
     }
     
     let data = new FormData(contactForm);
-    // contrôles 
 
-    let xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'contact_validation.php');
+    // contrôles ici
 
-    xhr.addEventListener('load', () => {
-
-    });
-
-    xhr.send();
 
     let myPromise = fetch(
         'contact_validation.php',
@@ -91,8 +84,6 @@ contactForm.addEventListener('submit', (event) => {
       * Si erreur, ajouter le message d'erreur dans l'élément #validationResult et affecter la classe .error à cet élément".
       * Si OK, ajouter le message "formulaire valide" dans l'élément #validationResult et affecter la classe .success à cet élément
       * */
-
-
 
       /* votre code ici */
 
