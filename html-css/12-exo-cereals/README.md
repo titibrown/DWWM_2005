@@ -1,3 +1,5 @@
+DWWM2005: TP à terminer avec ou sans VueJS au plus tard le 19 mars 2021.
+
 # Cereals 
 
 Pour cet exercice, vous devez créer une application web de gestion d'une liste des céréales du petit-déjeuner. 
