@@ -31,6 +31,7 @@ class Db
     {
         for(let user of this.users) {
             if(username === user.username && password === user.password) {
+                this.currentUser = user;
                 return true;
             }
         }

@@ -22,7 +22,7 @@
                 </div>
                 <div>
                     <label for="persist">Se souvenir de moi</label>
-                    <input id="persist" name="persist" type="checkbox">
+                    <input v-model="persist" id="persist" name="persist" type="checkbox"> {{ persist }}
                 </div>
                 <div>
                     <label for="human">Êtes vous un humain ?</label>
@@ -35,7 +35,9 @@
                     {{ message }}
                 </div>
             </form>
-            <section>
+            <section v-if="isLogged">
+                <h3>{{ test }}</h3>
+                <button v-on:click="usernameChange">Changer username</button>
                 <div v-for="user in users">
                     {{ user }}
                 </div>

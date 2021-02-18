@@ -14,7 +14,7 @@ class ApiCards
             console.log(json); // affichage de l'objet JS dans la console
         })
         .catch((error) => {
-            // next...
+            // si une erreur survient
         });
     }
 }
