@@ -13,13 +13,30 @@ const MyApp = {
         }
     },
 
+   
+
     created() 
     {
         // requêtes réseau (ajax etc...)
+
+        this.users = this.db.getAll();
+
+        if(localStorage.getItem("username") !== null) {
+            this.db.currentUser = this.users.find(toto => toto.username === localStorage.getItem("username"));
+/*
+            for(let toto of this.users) {
+                if(toto.username === localStorage.getItem("username")) {
+                    let user = toto;
+                    break;
+                }
+            }*/
+
+        }
+        
     },
 
     mounted() {
-        this.users = this.db.getAll();
+        
     },
 
     computed: {
@@ -29,6 +46,12 @@ const MyApp = {
 
         test() {
             return this.username.substring(0, 2).toUpperCase();
+        },
+
+        currentUsername()
+        {
+            return this.db.currentUser 
+            ? this.db.currentUser.username : 'Anonyme';
         }
     },
 
