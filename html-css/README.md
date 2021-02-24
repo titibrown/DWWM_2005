@@ -54,7 +54,7 @@ Durant votre apprentissage des technos web, continuez à travailler votre raison
 
 
 ## VueJS
-- https://fr.vuejs.org/v2/guide/index.html
+- https://v3.vuejs.org/guide/introduction.html
     - Suivre le tutoriel d'introduction
 
 
@@ -67,11 +67,13 @@ Durant votre apprentissage des technos web, continuez à travailler votre raison
     - [Exemple AJAX (Cars)](06-ajax//mycars/)
 - [Tableaux JS et tris](07-tableaux/)
 
+- [VueJS Frontend](13-vuejs/)
+
 
 Voir aussi : [Mini Demos](00-minidemos/)
 
 
-### Exercices : 
+### Exercices JS : 
 
 - [Exercice: Cats (flexbox)](01-exo-cat/)
 - [Exercice: Flexbox](03-exo-flex1/)
@@ -81,3 +83,7 @@ Voir aussi : [Mini Demos](00-minidemos/)
 - [Exercice: Films](10-exo-movies/)
 - [Exercice: Employees](11-exo-employees/)
 - [Exercice final: Cereales](12-exo-cereals/)
+
+
+### Exercices VueJS :
+- [Exercice : Bakery](20-exo-final-baker/)

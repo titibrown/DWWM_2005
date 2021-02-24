@@ -1,0 +1,18 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My first VueJS App</title>
+        <script src="https://unpkg.com/vue@next" defer></script>
+        <script src="main.js" type="module"></script>
+    </head>
+    <body>
+        <h1>My first VueJS App</h1>
+        <main id="myFirstApp">
+            <h2>Hello {{ firstname }}.</h2>
+            <p>You are {{ age }} years old.</p>
+            <button v-on:click="onButtonClick">get old</button>
+        </main>
+    </body>
+</html>
