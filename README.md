@@ -2,3 +2,6 @@
 
 Dépôt DWWM et CDA 2005.
 Les codes démos et corrections y seront centralisés.
+
+Vidéos disponibles sur http://media.arfp.eu 
+
