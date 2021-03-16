@@ -12,7 +12,7 @@ class Http
     /**
      * Analyser cette méthode (que fait-elle ?)
      */
-    static public function BCAE34FC(array $_data = []): array
+    static public function secure(array $_data = []): array
     {
         return \array_map(function ($v) {
             if(!\preg_match("/^[A-Za-z0-9\s]*$/", $v)) {
