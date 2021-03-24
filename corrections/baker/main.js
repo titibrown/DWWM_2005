@@ -1,4 +1,4 @@
-import { Bakery }from "./models/bakery.js"; 
+import { Bakery } from "./models/bakery.js";
 
 const myBaker = {
 
@@ -7,33 +7,36 @@ const myBaker = {
             bakery: new Bakery(),
             idTimer: 0,
             running: true
+
         }
-        
+
+    },
+
+    mounted()  {
+        setInterval(() => {
+            if(this.running && this.bakery.running)  {
+                if (!this.bakery.update()) {
+                    alert('Game Over!');
+                    this.running = false;
+                }
+            }
+
+        }, 1000);
     },
 
     methods: {
-        startStop: function() {
+        startStop: function () {
             this.bakery.running = !this.bakery.running;
-
-            if(this.bakery.running) {
-                this.idTimer = setInterval(() =>  {
-                    this.bakery.update();
-                    if(!this.bakery.update()){
-                        clearInterval(this.idTimer);
-                        alert('Game Over!');
-                    }
-                }, 1000);
-            }
         },
 
-        levelUp: function() {
-            if(!this.bakery.levelUp()) {
+        levelUp: function () {
+            if (!this.bakery.levelUp()) {
                 prompt('Pas assez d\'or');
             }
         },
 
-        buyMill: function() {
-            if(!this.bakery.buyMill()) {
+        buyMill: function () {
+            if (!this.bakery.buyMill()) {
                 prompt('Pas assez d\'or');
             }
         }

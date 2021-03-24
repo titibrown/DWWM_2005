@@ -14,7 +14,9 @@
         <main id="app">
             <header class="position">
             <h1>Le Boulanger</h1>
+      
             <table>
+               
                 <tr>
                     <th>Or gagné</th>
                     <th>Or dépensé</th>
@@ -24,19 +26,21 @@
                 <tr>
 
                     <td>{{ bakery.totalGoldsEarned }}</td>
-                    <td>{{ bakery.totalGoldsSpent }}</td>
+                    <td>{{ bakery.totalGoldsSpent.toFixed(2) }}</td>
                     <td>{{ bakery.totalFlourProduced }}</td>
                     <td>{{ bakery.totalBaguettesProduced }}</td>
                 </tr>
             </table>
+       
             </header>
             <section id="bakery">
                 <header>
                     <h2>Boulangerie</h2>
+
                     <button class="start" v-on:click="startStop">{{ bakery.running ? "Fermer" : "Ouvrir" }} la boulangerie</button>
                 </header>
                 <div>
-                    <img src="" alt="la boulangerie">
+                    <img src="./assets/baker.jpg" alt="">
                     <table>
                         <tr>
                             <th>Niveau</th> 
