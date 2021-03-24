@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Baker</title>
+        <link rel="stylesheet" href="baker.css">
+        <script src="https://unpkg.com/vue@next" defer></script>
+        <script src="main.js" type="module" defer></script>
+    </head>
+
+    <body>
+       
+        <main id="app">
+            <header class="position">
+            <h1>Le Boulanger</h1>
+            <table>
+                <tr>
+                    <th>Or gagné</th>
+                    <th>Or dépensé</th>
+                    <th>Farine produite</th>
+                    <th>Baguettes produites</th>
+                </tr>
+                <tr>
+
+                    <td>{{ bakery.totalGoldsEarned }}</td>
+                    <td>{{ bakery.totalGoldsSpent }}</td>
+                    <td>{{ bakery.totalFlourProduced }}</td>
+                    <td>{{ bakery.totalBaguettesProduced }}</td>
+                </tr>
+            </table>
+            </header>
+            <section id="bakery">
+                <header>
+                    <h2>Boulangerie</h2>
+                    <button class="start" v-on:click="startStop">{{ bakery.running ? "Fermer" : "Ouvrir" }} la boulangerie</button>
+                </header>
+                <div>
+                    <img src="" alt="la boulangerie">
+                    <table>
+                        <tr>
+                            <th>Niveau</th> 
+                            <td class="lightning">{{ bakery.level }}</td>
+                            <td>
+                                <button class="plus" v-on:click="levelUp">+</button>
+                            </td>
+                            <td class="gold">{{ bakery.level_price }}</td>  
+                        </tr>
+                        <tr>
+                            <th>Moulins</th>
+                            <td class="mills">{{ bakery.mills }}</td>
+                            <td>
+                                <button class="plus" v-on:click="buyMill">+</button>
+                            </td>
+                            <td class="gold">{{ bakery.mills_price }}</td>
+                        </tr>
+                        <tr>     
+                            <th>Or</th>   
+                            <td class="gold">{{ bakery.golds.toFixed(2) }}</td> 
+                        </tr>
+                        <tr>
+                            <th>Farine</th>      
+                            <td class="flour">{{ bakery.flour }} </td>
+                        </tr>
+                        <tr>
+                            <th>Baguettes</th> 
+                            <td class="baguette">{{ bakery.baguettes }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <a href="http://www.arfp.asso.fr">Centre de Réadaptation de Mulhouse</a>
+        </footer>
+    </body>
+</html>

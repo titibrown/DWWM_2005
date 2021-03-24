@@ -15,7 +15,7 @@ app.get('/cards', (requete, reponse) => {
     reponse.end(myJson);
 });
 
-app.get('/card/:id', (requete, reponse) => {
+app.get('/cards/:id', (requete, reponse) => {
     let id = parseInt(requete.params.id);
     console.log(id);
     let copymJ = JSON.parse(myJson);
@@ -23,6 +23,16 @@ app.get('/card/:id', (requete, reponse) => {
     reponse.writeHead(200, { 'Content-Type': 'application/json;charset=utf-8' });
     reponse.end(JSON.stringify(card));
 });
+
+app.put('/cards/:id', (requete, reponse) => {
+    let id = parseInt(requete.params.id);
+    console.log(id);
+    let copymJ = JSON.parse(myJson);
+    let card = copymJ.find( card => card.id === id);
+    reponse.writeHead(200, { 'Content-Type': 'application/json;charset=utf-8' });
+    reponse.end(JSON.stringify(card));
+});
+
 
 
 

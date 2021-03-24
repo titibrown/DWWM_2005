@@ -1,0 +1,36 @@
+:root {
+    --txt: #FFFFFF;
+    --txt2: #CCCCCC;
+    --bg: #44474E;
+    --bg-dark: #33373E;
+    --bg-light: #55575E;
+    --border: 1px solid #111;
+    --border2: 2px solid #111;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+body{
+    color: var(--txt);
+    background: var(--bg);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#bakery> header {
+    background-color: var(--bg-dark) ;
+}
+#bakery> div {
+    background-color: var(--bg-light);
+}
+#bakery > header , #bakery > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+header{
+
+    display:flex ;
+    justify-content: space-between;
+}
+
