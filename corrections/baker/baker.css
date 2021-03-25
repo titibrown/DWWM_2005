@@ -12,11 +12,13 @@
 * {
     box-sizing: border-box;
 }
+
 body{
     color: var(--txt);
     background: var(--bg-light);
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*-----------------------------Bakery------------------------------ */
 #bakery{
     margin-top: 5px;
@@ -40,21 +42,19 @@ body{
 #bakery h2{
     margin: 5px;
 }
-#bakery td{
-    text-align: right;
-}
-#bakery td{
-    
-    width: 100px;
-}
-.last{
-    width: 100px ;
-    color: var(--txt2);
-}
 #bakery th{
     color: var(--txt2);
     text-align: left;
     
+}
+#bakery td{
+    text-align: right;
+    width: 100px;
+}
+
+.last{
+    width: 100px ;
+    color: var(--txt2);
 }
 .tdbtn{
   width: 20px!important;
@@ -94,86 +94,83 @@ body{
 
 .start{
     display: inline-block;
-   
     background:var(--bg-dark) ;
     border:solid 1px black;
     color: var(--txt);
 }
-header{
 
+header {
     display:flex ;
     justify-content: space-between;
     align-items: stretch;
-    
- 
 }
-header th{
-
+header th {
     background: var(--bg-dark);
 }
-h1{
 
+h1{
     margin-top: 0;
 }
+
 header td{
     background: var(--bg) ;
 }
 
-
 header th, header td{
-
-    padding: 9px 5px;
+   padding: 9px 5px;
    text-align: center;
    
 }
-table{
 
+table{
     border-spacing: 0;
     border-collapse: collapse;
 }
 
 div > img{
-
     width: 160px;
     transform: rotateY(180deg);
     filter: grayscale(0.5);
 }
+
 /* ----------------------- Orders -------------------*/
+
 #orders {
     border:var(--border2);
     margin-top: 5px;
     width: 100%;
-    
-   
 }
+
 #orders >header {
     background-color: var(--bg-dark);
-    border-bottom: var(--border2);
-    
+    border-bottom: var(--border2); 
 }
 
 #orders h1{
-   
-    
     margin: 8px;
-    
 }
+
 #orders table{
    width: 100%;
 }
+
 #orders td{
     padding: 5px;
 }
+
 #orders th {
     background-color:#253539 ; 
     padding: 5px;
 }
+
 #orders tr:nth-child(even){
     background-color: #44474E;
 }
+
 #orders tr:nth-child(odd){
     background-color: #374046;
 }
+
 #orders td:not(:last-child) {
     text-align: center;
     width: 12%;

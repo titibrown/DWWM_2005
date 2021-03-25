@@ -1,14 +1,31 @@
-import { Bakery } from "./models/bakery.js";
+import { Order } from "./models/Order.js";
+import { Bakery } from "./models/Bakery.js";
 
 const myBaker = {
 
     data() {
         return {
             bakery: new Bakery(),
+            orders: [],
             idTimer: 0,
             running: true
 
         }
+
+    },
+
+    beforeMount() {
+
+        let i;
+
+        for(i = 0; i < 10 ;i++) 
+        {
+            let o = new Order();
+            o.id = i;
+            this.orders.push(o);
+        }
+
+
 
     },
 
@@ -23,11 +40,7 @@ const myBaker = {
                     else{
                         document.location.href = "//www.google.com";
                     }
-
                     
-
-
-                    //alert('Game Over!');
                 }
             }
 
