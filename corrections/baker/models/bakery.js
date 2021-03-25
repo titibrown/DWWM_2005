@@ -10,7 +10,7 @@ class Bakery {
         this.mills = 1;
         this.mills_price = 80;
 
-        this.golds = 100;
+        this.golds = 999100;
 
         this.flour = 50;
 
@@ -26,10 +26,12 @@ class Bakery {
         this.totalGoldsSpent += this.mills * this.level * 0.05;
         
         this.flour += this.mills;
+        this.totalFlourProduced+=this.mills;
 
         if (this.flour >= this.level + 1) {
             this.flour -= this.level + 1
             this.baguettes += this.level;
+            this.totalBaguettesProduced+= this.level;
         }
 
         return this.golds > 0;
@@ -39,6 +41,7 @@ class Bakery {
         if (this.golds >= this.level_price) {
             this.level++
             this.golds -= this.level_price;
+            this.totalGoldsSpent+=this.level_price;
             this.level_price *= 1.5;
             return true;
         }
@@ -50,6 +53,7 @@ class Bakery {
         if (this.golds >= this.mills_price) {
             this.mills++
             this.golds -= this.mills_price;
+            this.totalGoldsSpent += this.mills_price;
             this.mills_price *= 1.5;
             return true;
         }

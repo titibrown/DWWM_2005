@@ -17,6 +17,7 @@ body{
     background: var(--bg-light);
     font-family: Arial, Helvetica, sans-serif;
 }
+/*-----------------------------Bakery------------------------------ */
 #bakery{
     margin-top: 5px;
 }
@@ -35,6 +36,49 @@ body{
 #bakery h2{
     margin: 5px;
 }
+#bakery td{
+    text-align: right;
+    min-width: 90px;
+}
+#bakery th{
+    color: var(--txt2);
+    text-align: left;
+}
+#bakery td:nth-child(2n){
+    max-width: 30px;
+}
+.plus{
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    color: var(--txt);
+}
+.lightning::after{
+    content: "⚡";
+    
+}
+.gold::after{
+    content: "💰";
+   
+}
+.flour::after{
+    content:"🥌";
+}
+.baguette::after{
+    content:"🥖";
+}
+.mills::after{
+    content:"";
+    background-image: url("./assets/mill.png");
+    background-size: contain;
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    background-repeat: no-repeat;
+}
+
+/*-------------------------------------- HEADER --------------------------------- */
+
 .start{
     display: inline-block;
    

@@ -16,8 +16,18 @@ const myBaker = {
         setInterval(() => {
             if(this.running && this.bakery.running)  {
                 if (!this.bakery.update()) {
-                    alert('Game Over!');
                     this.running = false;
+                    if(confirm("Vous avez perdu \nSouhaitez-vous recommencer ?")){
+                        document.location.reload();
+                    }
+                    else{
+                        document.location.href = "//www.google.com";
+                    }
+
+                    
+
+
+                    //alert('Game Over!');
                 }
             }
 
