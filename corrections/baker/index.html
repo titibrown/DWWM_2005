@@ -45,18 +45,18 @@
                         <tr>
                             <th>Niveau</th> 
                             <td class="lightning">{{ bakery.level }}</td>
-                            <td>
+                            <td class="tdbtn">
                                 <button class="plus" v-on:click="levelUp">+</button>
                             </td>
-                            <td class="gold">{{ bakery.level_price }}</td>  
+                            <td class="gold last">{{ bakery.level_price.toFixed(0) }}</td>  
                         </tr>
                         <tr>
                             <th>Moulins</th>
                             <td class="mills">{{ bakery.mills }}</td>
-                            <td>
+                            <td class="tdbtn">
                                 <button class="plus" v-on:click="buyMill">+</button>
-                            </td>
-                            <td class="gold">{{ bakery.mills_price }}</td>
+                            </td >
+                            <td class="gold last">{{ bakery.mills_price.toFixed(0) }}</td>
                         </tr>
                         <tr>     
                             <th>Or</th>   
@@ -72,6 +72,48 @@
                         </tr>
                     </table>
                 </div>
+            </section>
+            <section id="orders">
+                <header>
+                    <h1>Commandes</h1>
+                </header>
+                <div>
+                    <table>
+                        <tr>
+                            <th>📲</th>
+                            <th>🥖</th>
+                            <th>💰/🥖</th>
+                            <th>💰💰💰</th>
+                            <th>⌚</th>
+                            <th>&#128483;</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>En attente...</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>En attente...</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>En attente...</td>
+                        </tr>
+                    </table>
+                </div>
+
             </section>
         </main>
 

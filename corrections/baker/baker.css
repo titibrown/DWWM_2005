@@ -20,12 +20,16 @@ body{
 /*-----------------------------Bakery------------------------------ */
 #bakery{
     margin-top: 5px;
+    border: var(--border2);
 }
 #bakery> header {
     background-color: var(--bg-dark) ;
+    border-bottom: var(--border2);
+    
 }
 #bakery> div {
     background-color: var(--bg);
+    
 }
 #bakery > header , #bakery > div{
     display: flex;
@@ -38,19 +42,28 @@ body{
 }
 #bakery td{
     text-align: right;
-    min-width: 90px;
+}
+#bakery td{
+    
+    width: 100px;
+}
+.last{
+    width: 100px ;
+    color: var(--txt2);
 }
 #bakery th{
     color: var(--txt2);
     text-align: left;
+    
 }
-#bakery td:nth-child(2n){
-    max-width: 30px;
+.tdbtn{
+  width: 20px!important;
 }
 .plus{
     border-radius: 50%;
     background-color: var(--bg-dark);
     color: var(--txt);
+    margin-left: 15px;
 }
 .lightning::after{
     content: "⚡";
@@ -124,4 +137,44 @@ div > img{
     width: 160px;
     transform: rotateY(180deg);
     filter: grayscale(0.5);
+}
+/* ----------------------- Orders -------------------*/
+#orders {
+    border:var(--border2);
+    margin-top: 5px;
+    width: 100%;
+    
+   
+}
+#orders >header {
+    background-color: var(--bg-dark);
+    border-bottom: var(--border2);
+    
+}
+
+#orders h1{
+   
+    
+    margin: 8px;
+    
+}
+#orders table{
+   width: 100%;
+}
+#orders td{
+    padding: 5px;
+}
+#orders th {
+    background-color:#253539 ; 
+    padding: 5px;
+}
+#orders tr:nth-child(even){
+    background-color: #44474E;
+}
+#orders tr:nth-child(odd){
+    background-color: #374046;
+}
+#orders td:not(:last-child) {
+    text-align: center;
+    width: 12%;
 }
