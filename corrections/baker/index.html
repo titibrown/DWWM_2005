@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
         <title>Baker</title>
         <link rel="stylesheet" href="baker.css">
         <script src="https://unpkg.com/vue@next" defer></script>
@@ -89,11 +91,21 @@
                         </tr>
                         <tr v-for="order in orders">
                             <td>{{ order.id }}</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>En attente...</td>
+                            <td>{{ order.baguette }}</td>
+                            <td>{{ order.unitPrice }}</td>
+                            <td>{{ order.totalPrice }}</td>
+                            <td>{{ order.timeLeft }}</td>
+                            <td v-if="order.state === 0">En attente...</td>
+                            <td v-else-if="order.state === 1">
+                                <button @click="acceptOrder">Y</button>
+                                <button @click="refuseOrder">N</button>
+                            </td>
+                            <td v-else-if="order.state === 2">Refusée</td>
+                            <td v-else-if="order.state === 3">
+                                <progress max="order.baguette"  value="bakery.baguette"></progress>
+                                {{ bakery.baguette }}/{{ order.baguette }}
+                            </td>
+                            <td v-else>Livrée</td>
                         </tr>
                     </table>
                 </div>

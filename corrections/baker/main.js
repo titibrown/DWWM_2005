@@ -8,7 +8,8 @@ const myBaker = {
             bakery: new Bakery(),
             orders: [],
             idTimer: 0,
-            running: true
+            running: true,
+            idCount: 0,
 
         }
 
@@ -20,8 +21,7 @@ const myBaker = {
 
         for(i = 0; i < 10 ;i++) 
         {
-            let o = new Order();
-            o.id = i;
+            let o = new Order();   
             this.orders.push(o);
         }
 
@@ -62,7 +62,26 @@ const myBaker = {
             if (!this.bakery.buyMill()) {
                 prompt('Pas assez d\'or');
             }
+        },
+
+        acceptOrder: function (event){
+            event.target.dataset.state = 3;
+            event.target.dataset.timeLeft = 90;
+        },
+
+        refuseOrder: function (event){
+            event.target.dataset.state = 2;
+        },
+
+        generateOrder: function (){
+            if (Math.floor(Math.random()*(4-1)+1)!==3){
+                orders[orders.findIndex(orders => order.state!==3 || order.state!==1)] 
+            }
         }
+
+
+        
+
     }
 }
 
