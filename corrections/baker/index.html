@@ -91,19 +91,20 @@
                         </tr>
                         <tr v-for="order in orders">
                             <td>{{ order.id }}</td>
-                            <td>{{ order.baguette }}</td>
-                            <td>{{ order.unitPrice }}</td>
-                            <td>{{ order.totalPrice }}</td>
-                            <td>{{ order.timeLeft }}</td>
+                            <td>{{ order.baguettes.toFixed(0) }}</td>
+                            <td>{{ order.unitPrice.toFixed(2) }}</td>
+                            <td>{{ order.totalPrice.toFixed(2) }}</td>
+                            <td v-if="order.timeLeft > 0" >{{ order.timeLeft.toFixed(0) }}</td>
+                            <td v-else>0</td>
                             <td v-if="order.state === 0">En attente...</td>
                             <td v-else-if="order.state === 1">
-                                <button @click="acceptOrder">Y</button>
-                                <button @click="refuseOrder">N</button>
+                                <button :data-order="order.id" @click="acceptOrder">Y</button>
+                                <button :data-order="order.id" @click="refuseOrder">N</button>
                             </td>
                             <td v-else-if="order.state === 2">Refusée</td>
                             <td v-else-if="order.state === 3">
-                                <progress max="order.baguette"  value="bakery.baguette"></progress>
-                                {{ bakery.baguette }}/{{ order.baguette }}
+                                <progress max="order.baguettes"  value="bakery.baguettes"></progress>
+                                {{ bakery.baguettes }}/{{ order.baguettes }}
                             </td>
                             <td v-else>Livrée</td>
                         </tr>
