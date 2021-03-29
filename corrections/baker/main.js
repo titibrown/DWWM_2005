@@ -95,7 +95,7 @@ const myBaker = {
                     order.state= OrderState.CANCELLED ;
                 } 
             })
-
+            
             this.orders.forEach(order => {
 
                 switch (order.state){
@@ -116,6 +116,7 @@ const myBaker = {
                             break;
                    
                 }
+                
             });
         }
 
