@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Baker</title>
+        <link rel="stylesheet" href="baker.css">
+        <script src="https://unpkg.com/vue@next" defer></script>
+        <script src="baker.js" type="module" defer></script>
+    </head>
+
+    <body>
+        <main id="app">
+            <header id="header">
+                <h1>Le Boulanger</h1>
+                <table class="orderTable">
+                    <tr>
+                        <th>Or gagné</th>
+                        <th>Or dépensé</th>
+                        <th>Farine produite</th>
+                        <th>Baguettes produites</th>
+                    </tr>
+                    <tr>
+                        <td>{{ totalgoldsEarned }}</td>
+                        <td>{{ totalgoldsSpent }}</td>
+                        <td>{{ bakery.total.flour }}</td>
+                        <td>{{ bakery.total.baguettes }}</td>
+                    </tr>
+                </table>
+            </header>
+            <section id="bakery">
+                <article class="container">
+                    <header>
+                        <h2>Boulangerie</h2>
+                        <button v-if="running" v-on:click="toggleBakery">{{ startStop }} la boulangerie</button>
+                        <button v-else>La boulangerie a fait faillite</button>
+                    </header>
+                    <div>
+                        <img class="logo" src="assets/baker.jpg" alt="">
+                        <table>
+                            <tr>
+                                <td>Niveau</td>
+                                <td id="level" class="level">{{ bakery.level }}</td>
+                                <td><button v-on:click="levelUp">&#10133;</button></td>
+                                <td id="levelPrice" class="price">{{ bakery.levelPrice }}</td>
+                            </tr>
+                            <tr>
+                                <td>Moulins</td>
+                                <td id="mills" class="mills">{{ bakery.mills }}</td>
+                                <td><button v-on:click="buyMill">&#10133;</button></td>
+                                <td id="millPrice" class="price">{{ bakery.millPrice }}</td>
+                            </tr>
+                            <tr>
+                                <td>Or</td>
+                                <td id="golds" class="price">{{ golds }}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Farine</td>
+                                <td id="flour" class="flour">{{ bakery.flour }}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Baguettes</td>
+                                <td id="baguettes" class="baguettes">{{ bakery.baguettes }}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <section id="orders">
+                <article class="container">
+                    <header>
+                        <h2>Commandes</h2>
+                    </header>
+                    <div>
+                        <table class="orderTable">
+                            <thead>
+                                <tr>
+                                    <th>&#128242;</th>
+                                    <th>&#129366;</th>
+                                    <th>&#128176;/&#129366;</th>
+                                    <th>&#128176; &#128176; &#128176;</th>
+                                    <th>&#8986;</th>
+                                    <th>&#128483;</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersList">
+                                <tr v-for="order in shop.orders">
+                                    <td>{{ order.id }}</td>
+                                    <td>{{ order.baguettes }}</td>
+                                    <td>{{ order.price }}</td>
+                                    <td>{{ order.totalPrice }}</td>
+                                    <td>{{ order.timeleft }}</td>
+                                    <td v-if="order.state == 0">
+                                        En attente... 
+                                    </td>
+                                    <td v-else-if="order.state == 1">
+                                        <button :data-oid="order.id" v-on:click="acceptOrder">Y</button>
+                                        <button :data-oid="order.id" v-on:click="cancelOrder">N</button> 
+                                    </td>
+                                    <td v-else-if="order.state == 2">
+                                        <progress :value="runningOrderBaguettes(order.id)" :max="order.baguettes"></progress> {{ runningOrderBaguettes(order.id) }}/{{ order.baguettes }}
+                                    </td>
+                                    <td v-else-if="order.state == 3">
+                                        Commande terminée ! 
+                                    </td>
+                                    <td v-else>
+                                        Commande annulée !
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+            <section id="log">
+                <article class="container">
+                    <header>
+                        <h2>Log</h2>
+                    </header>
+                    <div v-for="msg in logger.log" style="padding: 5px;">
+                        {{ msg }}
+                    </div>
+                </article>
+                
+            </section>
+        </main>
+
+        <footer>
+            <a href="http://www.arfp.asso.fr">Centre de Réadaptation de Mulhouse</a>
+        </footer>
+    </body>
+</html>
