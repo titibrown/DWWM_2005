@@ -21,17 +21,26 @@ class Order
         this.timeLeft = 0;
         this.state = OrderState.EMPTY;
     }
+    static getRandomInt(min, max) 
+    {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
 
     changeOrder(bakeryLevel ) {
-        this.id= ++Order.idCount;
-        this.baguettes = Math.random()*((bakeryLevel * 30) - 5)+5;
 
-        this.unitPrice = Math.random()*((30*bakeryLevel/100) - (bakeryLevel /100))+(bakeryLevel /100);
-        this.unitPrice = Math.round(this.unitPrice * 100) / 100;
+        this.id= ++Order.idCount;
+
+        this.baguettes = Order.getRandomInt(5 ,bakeryLevel* 30) ;
+        
+
+        this.unitPrice = Order.getRandomInt((bakeryLevel ),(30*bakeryLevel))/100;
 
         this.totalPrice = Math.round(this.unitPrice*this.baguettes*100)/100;
 
-        this.timeLeft = Math.random()*((60) - 10)+10;
+        this.timeLeft =Order.getRandomInt(10 ,60);
+
         this.state= OrderState.PENDING;
     }
 

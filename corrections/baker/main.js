@@ -1,5 +1,6 @@
 import { Order, OrderState } from "./models/Order.js";
 import { Bakery } from "./models/Bakery.js";
+import { Logger } from "./models/Logger.js";
 
 const myBaker = {
 
@@ -10,6 +11,8 @@ const myBaker = {
             idTimer: 0,
             running: true,
             idCount: 0,
+            currentOrder: null ,
+            logger: Logger.getLogger(),
 
         }
 
@@ -33,6 +36,7 @@ const myBaker = {
         setInterval(() => {
             if(this.running && this.bakery.running)  {
                 this.checkOrders();
+                this.deliverOrder();
                 if (!this.bakery.update()) {
                     
                     this.running = false;
@@ -56,19 +60,20 @@ const myBaker = {
 
         levelUp: function () {
             if (!this.bakery.levelUp()) {
-                prompt('Pas assez d\'or');
+                alert('Pas assez d\'or');
             }
         },
 
         buyMill: function () {
             if (!this.bakery.buyMill()) {
-                prompt('Pas assez d\'or');
+                alert('Pas assez d\'or');
             }
         },
 
         acceptOrder: function (event){
             let orderToAccept =this.orders.find(order => order.id == event.target.dataset.order);
             orderToAccept.state=OrderState.ACCEPTED;
+            Logger.getLogger().addLog("La commande "+orderToAccept+" a été accepté");
             orderToAccept.timeLeft = 90;
             /* event.target.dataset.state = OrderState.ACCEPTED;
             */
@@ -96,7 +101,7 @@ const myBaker = {
                 } 
             })
             
-            this.orders.forEach(order => {
+            for( let order of this.orders){
 
                 switch (order.state){
                     case OrderState.EMPTY:
@@ -105,20 +110,42 @@ const myBaker = {
                         if(Math.random()<0.6){
                             order.changeOrder(this.bakery.level)
                         }
-                        return;
-                    
-                        
-                    
+                        return ;    
                     case OrderState.PENDING:
-
                     case OrderState.ACCEPTED:
                         default:
-                            break;
-                   
+                            break;      
+                }        
+            };
+        },
+
+        getAcceptedOrder: function(){
+
+            let o = this.orders.filter(order => order.state== OrderState.ACCEPTED);
+            o = o.sort((a,b) => a.timeLeft - b.timeLeft );
+            this.currentOrder = o[0];
+            return o;
+        },
+
+        deliverOrder: function(){
+
+            let o = this.getAcceptedOrder();
+            if(o.length>0){
+                /** @var Order o */
+                o = o[0];
+                if( this.bakery.baguettes >= o.baguettes ){
+                    o.state = OrderState.DONE;
+                    this.bakery.sendBaguettes(o.baguettes);
+                    Logger.getLogger().addLog("La boulangerie a livré "+o.baguettes+" baguettes");
+                    this.bakery.earnGold(o.totalPrice);
+
                 }
-                
-            });
-        }
+            }
+        },
+
+
+
+
 
         
 

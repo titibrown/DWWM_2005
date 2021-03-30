@@ -1,3 +1,5 @@
+import { Logger } from "./Logger.js";
+
 class Bakery {
 
     constructor() {
@@ -59,6 +61,18 @@ class Bakery {
         }
 
         return false;
+    }
+
+    earnGold(reward){
+        this.golds+=reward;
+        this.totalGoldsEarned+=reward;
+        Logger.getLogger().addLog("La boulangerie a gagné "+ reward +" Or");
+
+    }
+
+    sendBaguettes(nbBaguettes){
+        this.baguettes-=nbBaguettes;
+
     }
 
 
