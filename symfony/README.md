@@ -26,8 +26,8 @@ Toutes les commandes suivantes doivent être saisies dans ce répertoire.
 ```
 composer require symfony/string
 composer require symfony/maker-bundle --dev
-composer require symfony/api       
-composer require symfony/migrations 
+composer require api       
+composer require migrations 
 ```
 
 ## Lancer / Arrêter le serveur PHP interne 
@@ -56,7 +56,7 @@ php bin/console make:entity
 
 Répondez "Oui" à la question "is Api Resource ?" puis créez les différents champs
 
-Une fois terminé, observez le répertoire src/Entity, votre entité a été généré.
+Une fois terminé, observez le répertoire src/Entity, votre entité a été générée.
 
 ## Configuration de la base de données 
 Dans le fichier .env, décommentez la chaine de connexion adaptée à votre serveur de base de données.
@@ -115,11 +115,12 @@ Sous l'élement api_platform:
 
 # Quelques liens :
 
-https://blog.nicolashachet.com/developpement-php/larchitecture-rest-expliquee-en-5-regles/
+1. https://blog.nicolashachet.com/developpement-php/larchitecture-rest-expliquee-en-5-regles/
 
-https://api-platform.com/
+2. https://www.kaherecode.com/tutorial/developper-une-api-rest-avec-symfony-et-api-platform
 
-https://www.kaherecode.com/tutorial/developper-une-api-rest-avec-symfony-et-api-platform
+3. https://www.kaherecode.com/tutorial/developper-une-api-rest-avec-symfony-et-api-platform-les-relations-entre-entites
 
-https://www.kaherecode.com/tutorial/developper-une-api-rest-avec-symfony-et-api-platform-les-relations-entre-entites
-
+--- 
+- https://api-platform.com/
+- https://swagger.io/
