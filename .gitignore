@@ -3,6 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+*.lo1
+.vscode
 
 node_modules
 *.vpp.*
@@ -20,6 +22,7 @@ node_modules
 # Mono auto generated files
 mono_crash.*
 
+vendor/
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Async Test</title>
+        <script>
+            const fonctionSynchrone = () => {
+                for(let i = 0; i < 900000; i++) {
+                    let date = new Date();
+                }
+                console.log('SYNC terminé');
+            }
+
+            const fonctionAsynchrone = async () => {
+                for(let i = 0; i < 500000; i++) {
+                    let date = await new Date();
+                }
+                console.log('ASYNC terminé');
+            }
+
+            const fonctionAsynchroneLongue = async () => {
+                for(let i = 0; i < 2000000; i++) {
+                    let date = await new Date();
+                }
+                console.log('ASYNC long terminé'); 
+            }
+
+            fonctionAsynchrone(); // 2
+            fonctionAsynchroneLongue(); // 5 arrivera en dernier 
+            fonctionAsynchrone(); // 3
+            fonctionSynchrone(); // 1 SYNC (1er à être exécuté)
+            fonctionAsynchrone(); // 4
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Async &amp; Await: Le TEST</h1>
+        </header>
+        <main id="main">
+            Ouvrir la console et F5 :)
+        </main>
+    </body>
+</html>
